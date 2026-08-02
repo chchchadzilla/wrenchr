@@ -1,0 +1,47 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model RepairSearch {
+  id           String      @id @default(uuid())
+  year         Int
+  make         String
+  model        String
+  zipcode      String
+  repairType   String
+  onlyDealers  Boolean     @default(false)
+  aseOnly      Boolean     @default(false)
+  carbOnly     Boolean     @default(false)
+  createdAt    DateTime    @default(now())
+  results      ShopResult[]
+}
+
+model ShopResult {
+  id              String        @id @default(uuid())
+  searchId        String
+  search          RepairSearch  @relation(fields: [searchId], references: [id], onDelete: Cascade)
+  shopName        String
+  address         String
+  phone           String
+  website         String?
+  bookingUrl      String?
+  distanceMiles   Float
+  googleRating    Float?
+  googleReviews   Int?
+  yelpRating      Float?
+  yelpReviews     Int?
+  bbbAccredited   Boolean       @default(false)
+  bbbRating       String?
+  aseCertified    Boolean       @default(false)
+  carbCompliant   Boolean       @default(false)
+  isDealer        Boolean       @default(false)
+  estimatedPrice  Float
+  priceCategory   String        // 'CHEAPEST' | 'BEST_VALUE' | 'HIGHEST_RATED'
+  sourceSummary   String        // JSON string of aggregated review insights
+  updatedAt       DateTime      @updatedAt
+}
