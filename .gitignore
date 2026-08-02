@@ -29,3 +29,9 @@ next-env.d.ts
 # database
 /prisma/*.db
 /prisma/*.db-journal
+
+# internal local co-founder memory files
+/agents.md
+/plans.md
+/currentactions.md
+/completed.md

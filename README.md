@@ -1,5 +1,5 @@
 <a href="https://github.com/chchchadzilla/wrenchr">
-  <img src="./bannerimage.png" alt="Wrenchr Banner" width="100%" />
+  <img src="./public/images/bannerimage.png" alt="Wrenchr Banner" width="100%" />
 </a>
 
 # Wrenchr - Live Auto Repair Finder & Unbiased Valuation Engine
