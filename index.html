@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wrenchr - Stop Getting Overcharged for Auto Repair</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fff7ed',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+            },
+            dark: {
+              900: '#09090b',
+              950: '#030712'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-panel {
+      background: rgba(24, 24, 27, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glow-orange {
+      box-shadow: 0 0 35px -5px rgba(249, 115, 22, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-dark-950 text-zinc-100 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Navigation -->
+  <header class="w-full max-w-6xl mx-auto px-6 py-6 flex items-center justify-between border-b border-zinc-800">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-500 flex items-center justify-center font-black text-white text-xl shadow-lg shadow-brand-500/30">
+        W
+      </div>
+      <div>
+        <span class="text-2xl font-extrabold tracking-tight text-white font-mono uppercase">
+          Wrench<span class="text-brand-500">r</span>
+        </span>
+        <span class="ml-2 px-2 py-0.5 text-[10px] bg-brand-500/10 text-brand-400 font-semibold rounded border border-brand-500/20">
+          PRO v1.0
+        </span>
+      </div>
+    </div>
+    <div class="flex items-center space-x-4">
+      <a href="https://github.com/chchchadzilla/wrenchr" target="_blank" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-xs font-semibold rounded-xl border border-zinc-700 transition">
+        GitHub Repo
+      </a>
+      <a href="#demo" class="px-4 py-2 bg-brand-500 hover:bg-brand-600 text-white text-xs font-bold rounded-xl shadow-md transition">
+        Launch Web App
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-12 text-center space-y-6">
+    <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-brand-500/10 text-brand-400 text-xs font-semibold border border-brand-500/20">
+      <span>Built by Chad Keith - Free & Open Source</span>
+    </div>
+
+    <h1 class="text-4xl sm:text-7xl font-black text-white tracking-tight leading-none">
+      Never Pay an Arm & a Leg for <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-orange-400">Auto Repair</span> Again.
+    </h1>
+
+    <p class="text-base sm:text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed">
+      Enter your Year, Make, Model, and ZIP code. Wrenchr instantly scans surrounding facilities, aggregates verified reviews across Google, Yelp, BBB, and CARB datasets, and surfaces your top three actionable repair choices.
+    </p>
+
+    <!-- Visual Banner Graphic Container -->
+    <div class="pt-6">
+      <div class="glass-panel p-2 rounded-2xl glow-orange max-w-4xl mx-auto overflow-hidden">
+        <img src="./bannerimage.png" alt="Wrenchr Live Dashboard Banner" class="w-full h-auto rounded-xl object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Search Launcher Box -->
+  <section id="demo" class="max-w-4xl mx-auto px-6 py-8 w-full">
+    <div class="glass-panel p-8 rounded-3xl border border-zinc-800 space-y-6">
+      <div class="flex items-center space-x-3 mb-2">
+        <div class="p-3 bg-brand-500/10 text-brand-500 rounded-xl font-bold">
+          TOOL
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-white">Find Unbiased Local Quotes</h2>
+          <p class="text-xs text-zinc-400">Next.js App Router live engine ready for deployment</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+        <div>
+          <label class="block text-xs font-semibold text-zinc-400 mb-1">Year</label>
+          <select class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-brand-500">
+            <option>2022</option>
+            <option>2020</option>
+            <option>2018</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-zinc-400 mb-1">Make</label>
+          <select class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-brand-500">
+            <option>Toyota</option>
+            <option>Honda</option>
+            <option>Ford</option>
+            <option>BMW</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-zinc-400 mb-1">Model</label>
+          <input type="text" value="Camry" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-brand-500" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-zinc-400 mb-1">ZIP Code</label>
+          <input type="text" value="90210" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-sm font-mono text-white focus:outline-none focus:border-brand-500" />
+        </div>
+      </div>
+
+      <a href="https://github.com/chchchadzilla/wrenchr" target="_blank" class="block w-full py-4 text-center bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-600 text-white font-bold rounded-xl shadow-lg shadow-brand-500/25 transition">
+        Run Live Search on GitHub Repo ->
+      </a>
+    </div>
+  </section>
+
+  <!-- Tri-Tier Feature Breakdown -->
+  <section class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="glass-panel p-6 rounded-2xl border border-zinc-800 space-y-3">
+      <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Tier 1</div>
+      <h3 class="text-lg font-bold text-white">1. Cheapest Option</h3>
+      <p class="text-xs text-zinc-400 leading-relaxed">
+        Locates the absolute lowest verified price quote in your zip code for budget-conscious drivers.
+      </p>
+    </div>
+
+    <div class="glass-panel p-6 rounded-2xl border border-brand-500/40 glow-orange space-y-3 bg-zinc-900/80">
+      <div class="text-xs font-bold text-brand-400 uppercase tracking-wider">Tier 2 - Featured</div>
+      <h3 class="text-lg font-bold text-white">2. Sweet Spot (Best Value)</h3>
+      <p class="text-xs text-zinc-400 leading-relaxed">
+        Algorithmic ratio balancing 60% customer trust rating against 40% price savings so you get the best deal safely.
+      </p>
+    </div>
+
+    <div class="glass-panel p-6 rounded-2xl border border-zinc-800 space-y-3">
+      <div class="text-xs font-bold text-amber-400 uppercase tracking-wider">Tier 3</div>
+      <h3 class="text-lg font-bold text-white">3. Highest Rated Option</h3>
+      <p class="text-xs text-zinc-400 leading-relaxed">
+        Top-rated facility with master ASE mechanics and flawless sentiment across Google, Yelp, and BBB.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="w-full max-w-6xl mx-auto px-6 py-8 border-t border-zinc-800/80 text-center text-xs text-zinc-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div>
+      (C) 2026 Wrenchr. Designed & Authored by <strong>Chad Keith</strong>.
+    </div>
+    <div class="flex items-center space-x-4">
+      <a href="https://github.com/chchchadzilla/wrenchr" class="hover:text-zinc-300">GitHub Repository</a>
+      <span>-</span>
+      <span>MIT License</span>
+    </div>
+  </footer>
+
+</body>
+</html>
